@@ -3,7 +3,7 @@ import time
 t1 = time.time() 
  
 # 計測したい処理
-for i in range(10000):
+for i in range(10000000):
     i ** 10
  
 # 処理後の時刻
