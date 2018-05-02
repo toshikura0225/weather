@@ -1,60 +1,15 @@
-
-# coding: utf-8
-
-# In[2]:
-
-import numpy as np
-from sklearn.datasets import load_iris
-iris = load_iris()
-
-
-# In[3]:
-
-iris.data
-
-
-# In[4]:
-
-len(iris.data)
-
-
-# In[5]:
-
-iris.target
-
-
-# In[6]:
-
-len(iris.target)
-
-
-# In[7]:
-
-# モデルを作成
-from sklearn import tree
-clf = tree.DecisionTreeClassifier(max_depth=3)
-clf = clf.fit(iris.data, iris.target)
-
-
-# In[8]:
-
-predicted = clf.predict(iris.data)
-
-
-# In[9]:
-
-sum(predicted == iris.target) / len(iris.target)
-
-
-# In[10]:
-
-tree.export_graphviz(clf, out_file="tree.dot",
-                         feature_names=iris.feature_names,
-                         class_names=iris.target_names,
-                         filled=True, rounded=True)
-
-
-# In[ ]:
-
-
+import time
+# 処理前の時刻
+t1 = time.time() 
+ 
+# 計測したい処理
+for i in range(10000):
+    i ** 10
+ 
+# 処理後の時刻
+t2 = time.time()
+ 
+# 経過時間を表示
+elapsed_time = t2-t1
+print(f"経過時間：{elapsed_time}")
 
